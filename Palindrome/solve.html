@@ -45,13 +45,48 @@
                 <input type="text" class="form-control" placeholder="Enter a word or phrase" id="userWord">
                 <div class="input-group-append">
                     <button class="btn btn-success" type="button" id="submit">Submit</button>
+                    <button class="btn btn-secondary" type="button" id="submit">Clear</button>
                 </div>
             </div>
         </div>
         <div class="col"></div>
     </div>
+    <br/>
+    
+
 
     <script>
+        //1. Collect user string, convert to lowercase, remove spaces, periods, commas, semicolons from user string
+        $("#submit").click(function () {
+            let word = $("#userWord").val()
+            $("#msg1").text(`You entered: ${userWord}`);
+
+            if (word.length < 2) {
+                alert("Plese use at least 2 letters")
+            } else {
+                let word = userWord.toLowerCase().replace(/\s/ | /\,/ | /\;/ | /\'/ | /\"/g, "");
+
+                let revWord = word.split('').reverse().join('');
+                $("#msg2").text(`Reversed and cleaned up a bit, that's: ${revWord}`);
+
+                let msg3 = `You entered: ${userWord}. Reversed and cleaned up a bit, it becomes: ${revWord}.`
+                let result = "";
+
+                if (revWord == word) {
+                    result = `So, ${userWord} IS a palindrome!`;
+                } else {
+                    result = `So, ${userWord} is NOT a palindrome.`;
+                };
+
+                $("#finalMsg").text(msg3 + "" + result);
+            }
+        });
+
+        //4. Clear form
+
+
+   
+
 
 
     </script>
