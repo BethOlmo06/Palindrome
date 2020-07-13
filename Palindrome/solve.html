@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="en">
+<html lang="en" class="solve-bg">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -33,14 +33,14 @@
     <!-- Custom styles for this template -->
     <link href="CSS/cover.css" rel="stylesheet" />
 </head>
-<body class="text-center">
+<body class="text-center solve-bg">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
         <header class="masthead mb-auto">
             <div class="inner">
                 <h6 class="masthead-brand">Palindrome JavaScript Exercise</h6>
                 <nav class="nav nav-masthead justify-content-center">
-                    <a class="nav-link active" href="#">Home</a>
-                    <a class="nav-link" href="#">Solve</a>
+                    <a class="nav-link" href="\index.html">Home</a>
+                    <a class="nav-link active" href="#">Solve</a>
                     <a class="nav-link" href="#">Code</a>
                     <a class="nav-link" href="https://github.com/BethOlmo06/Palindrome" target="_blank">Git</a>
                     <a class="nav-link" href="#">Blog</a>
@@ -50,42 +50,20 @@
         </header>
 
         <main role="main" class="inner cover">
-            <script>
-                //1. Collect user string, convert to lowercase, remove spaces, periods, commas, semicolons from user string
-                $("#submit").click(function () {
-                    let word = $("#userWord").val()
-                    $("#msg1").text(`You entered: ${userWord}`);
-
-                    if (word.length < 2) {
-                        alert("Please use at least 2 letters")
-                    } else {
-                        let word = userWord.toLowerCase().replace(/\s/ | /\,/ | /\;/ | /\'/ | /\"/g, "");
-
-                        let revWord = word.split('').reverse().join('');
-                        $("#msg2").text(`Reversed and cleaned up a bit, that's: ${revWord}`);
-
-                        let msg3 = `You entered: ${userWord}. Reversed and cleaned up a bit, it becomes: ${revWord}.`
-                        let result = "";
-
-                        if (revWord == word) {
-                            result = `So, ${userWord} IS a palindrome!`;
-                        } else {
-                            result = `So, ${userWord} is NOT a palindrome.`;
-                        };
-
-                        $("#finalMsg").text(msg3 + "" + result);
-                    }
-                });
-
-                //4. Clear form
-
-
-
-
-
-
-            </script>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Enter a word or phrase" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+                <div class="input-group-append" id="button-addon4">
+                    <button class="btn btn-success" type="button" id="palIn">Submit</button>
+                    <button class="btn btn-secondary" type="button" id="palbtnClear">Clear</button>
+                </div>
+            </div>
         </main>
+
+        <script>
+            
+
+
+        </script>
 
         <footer class="mastfoot mt-auto">
             <div class="inner">
