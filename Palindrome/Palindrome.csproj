@@ -67,12 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSS\cover.css" />
     <Content Include="CSS\bootstrap-grid.min.css" />
     <Content Include="CSS\bootstrap.min.css" />
-    <Content Include="SCRIPTS\bootstrap.min.js" />
+    <Content Include="CSS\cover.css" />
     <Content Include="index.html" />
+    <Content Include="SCRIPTS\bootstrap.min.js" />
     <Content Include="IMG\TreviFountain.png" />
+    <Content Include="SCRIPTS\jquery.js" />
     <Content Include="solve.html" />
     <Content Include="Web.config" />
   </ItemGroup>

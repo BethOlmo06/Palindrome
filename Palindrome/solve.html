@@ -1,15 +1,37 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <title>Palindrome-Solve | Beth Olmo</title>
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.0.1">
+    <title>Amore Roma | Beth Olmo</title>
 
-    <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet" />
+
+
+    <!-- Bootstrap core CSS -->
     <link href="CSS/bootstrap.min.css" rel="stylesheet" />
+    <link href="CSS/cover.css" rel="stylesheet" />
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="CSS/cover.css" rel="stylesheet" />
 </head>
 <body class="text-center">
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
@@ -20,82 +42,60 @@
                     <a class="nav-link active" href="#">Home</a>
                     <a class="nav-link" href="#">Solve</a>
                     <a class="nav-link" href="#">Code</a>
-                    <a class="nav-link active" href="https://github.com/BethOlmo06/Palindrome" target="_blank">Git</a>
+                    <a class="nav-link" href="https://github.com/BethOlmo06/Palindrome" target="_blank">Git</a>
                     <a class="nav-link" href="#">Blog</a>
                     <a class="nav-link" href="https://betholmo-portfolio.netlify.app/" target="_blank">Portfolio</a>
                 </nav>
             </div>
-            <hr />
-            <br />
         </header>
-    </div>
 
-    <div class="row">
-        <div class="col"></div>
-        <div class="col">
-            <h5>Enter a word or phrase below, and let's see if it's a palindrome!</h5>
-        </div>
-        <div class="col"></div>
-    </div>
-    <br/>
-    <div class="row">
-        <div class="col"></div>
-        <div class="col">
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" placeholder="Enter a word or phrase" id="userWord">
-                <div class="input-group-append">
-                    <button class="btn btn-success" type="button" id="submit">Submit</button>
-                    <button class="btn btn-secondary" type="button" id="submit">Clear</button>
-                </div>
+        <main role="main" class="inner cover">
+            <script>
+                //1. Collect user string, convert to lowercase, remove spaces, periods, commas, semicolons from user string
+                $("#submit").click(function () {
+                    let word = $("#userWord").val()
+                    $("#msg1").text(`You entered: ${userWord}`);
+
+                    if (word.length < 2) {
+                        alert("Please use at least 2 letters")
+                    } else {
+                        let word = userWord.toLowerCase().replace(/\s/ | /\,/ | /\;/ | /\'/ | /\"/g, "");
+
+                        let revWord = word.split('').reverse().join('');
+                        $("#msg2").text(`Reversed and cleaned up a bit, that's: ${revWord}`);
+
+                        let msg3 = `You entered: ${userWord}. Reversed and cleaned up a bit, it becomes: ${revWord}.`
+                        let result = "";
+
+                        if (revWord == word) {
+                            result = `So, ${userWord} IS a palindrome!`;
+                        } else {
+                            result = `So, ${userWord} is NOT a palindrome.`;
+                        };
+
+                        $("#finalMsg").text(msg3 + "" + result);
+                    }
+                });
+
+                //4. Clear form
+
+
+
+
+
+
+            </script>
+        </main>
+
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <!--<p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>-->
             </div>
-        </div>
-        <div class="col"></div>
+        </footer>
     </div>
-    <br/>
-    
+    <script src="SCRIPTS/jquery.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="SCRIPTS/bootstrap.min.js"></script>
 
-
-    <script>
-        //1. Collect user string, convert to lowercase, remove spaces, periods, commas, semicolons from user string
-        $("#submit").click(function () {
-            let word = $("#userWord").val()
-            $("#msg1").text(`You entered: ${userWord}`);
-
-            if (word.length < 2) {
-                alert("Plese use at least 2 letters")
-            } else {
-                let word = userWord.toLowerCase().replace(/\s/ | /\,/ | /\;/ | /\'/ | /\"/g, "");
-
-                let revWord = word.split('').reverse().join('');
-                $("#msg2").text(`Reversed and cleaned up a bit, that's: ${revWord}`);
-
-                let msg3 = `You entered: ${userWord}. Reversed and cleaned up a bit, it becomes: ${revWord}.`
-                let result = "";
-
-                if (revWord == word) {
-                    result = `So, ${userWord} IS a palindrome!`;
-                } else {
-                    result = `So, ${userWord} is NOT a palindrome.`;
-                };
-
-                $("#finalMsg").text(msg3 + "" + result);
-            }
-        });
-
-        //4. Clear form
-
-
-   
-
-
-
-    </script>
-
-
-
-    <script src="CONTENT/js/jquery-3.2.1.min.js"></script>
-    <script src="CONTENT/plugin/bootstrap/js/popper.min.js"></script>
-    <script src="CONTENT/plugin/bootstrap/js/bootstrap.min.js"></script>
 </body>
-        
 </html>
