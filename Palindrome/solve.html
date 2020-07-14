@@ -54,26 +54,29 @@
                 <div class="card-body">
                     <h3 class="card-title">Choose your word or phrase.</h3>
                     <h5 class="card-subtitle mb-2 text-muted">Is it a palindrome?</h5>
-                    <br/>
+                    <br />
                     <h6 class="card-text">We will reverse your entry and see if it's the same backwards!</h6>
-                    <br/>
+                    <br />
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Enter a word or phrase">
-                        <div class="input-group-append" id="button-addon4">
-                            <button class="btn btn-success" type="button" id="palIn">Submit</button>
-                            <button class="btn btn-info" type="button" id="palbtnClear">Clear</button>
+                        <input type="text" class="form-control" placeholder="Enter a word or phrase" id="userWord">
+                        <div class="input-group-append">
+                            <button class="btn btn-success" type="button" id="submit">Submit</button>
+                            <button class="btn btn-info" type="button" id="clear">Clear</button>
                         </div>
                     </div>
+                    <hr />
+                    <p id="msg1"></p>
+                    <p id="msg2"></p>
+                    <p id="msg3"></p>
+                    <p id="msg4"></p>
+                    <p id="msg5"></p>
+                    <p id="finalMsg"></p>
                 </div>
             </div>
-     
+
         </main>
 
-        <script>
-            
 
-
-        </script>
 
         <footer class="mastfoot mt-auto">
             <div class="inner">
@@ -85,5 +88,44 @@
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="SCRIPTS/bootstrap.min.js"></script>
 
+    <script>
+        $("#submit").click(function () {
+            let word = $("#userWord").val()
+            $("#msg1").text(`You entered: ${word}`);
+
+            if (word.length < 2) {
+                alert("Please use at least 2 letters")
+            } else {
+                let cleanWord = word.toLowerCase().replace(/\s|\'|\"/g, '');
+                $("#msg2").text(`Cleaned up a bit, that's: ${cleanWord}.`);
+
+                let revWord = word.split('').reverse().join('');
+                $("#msg3").text(`Reversed, it's: ${revWord}.`);
+
+                let cleanRevWord = revWord.toLowerCase().replace(/\s|\'|\"/g, '');
+                $("#msg4").text(`Now when we clean it up, it's ${cleanRevWord}.`);
+
+                let result = "";
+
+                if (cleanWord == cleanRevWord) {
+                    result = `So, ${word} IS a palindrome!`;
+                } else {
+                    result = `So, ${word} is NOT a palindrome.`;
+                };
+
+                $("#finalMsg").text(" " + result);
+            }
+        });
+        $("#clear").click(function () {
+            $("#userWord").val("");
+            $("#msg1").text("");
+            $("#msg2").text("");
+            $("#msg3").text("");
+            $("#msg4").text("");
+            $("#finalMsg").text("");
+        });
+
+
+    </script>
 </body>
 </html>
