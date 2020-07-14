@@ -1,5 +1,5 @@
 ﻿<!doctype html>
-<html lang="en" class="solve-bg">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -41,7 +41,7 @@
                 <nav class="nav nav-masthead justify-content-center">
                     <a class="nav-link" href="\index.html">Home</a>
                     <a class="nav-link active" href="#">Solve</a>
-                    <a class="nav-link" href="#">Code</a>
+                    <a class="nav-link" href="\code.html">Code</a>
                     <a class="nav-link" href="https://github.com/BethOlmo06/Palindrome" target="_blank">Git</a>
                     <a class="nav-link" href="#">Blog</a>
                     <a class="nav-link" href="https://betholmo-portfolio.netlify.app/" target="_blank">Portfolio</a>
@@ -65,12 +65,14 @@
                         </div>
                     </div>
                     <hr />
-                    <p id="msg1"></p>
-                    <p id="msg2"></p>
-                    <p id="msg3"></p>
-                    <p id="msg4"></p>
-                    <p id="msg5"></p>
-                    <p id="finalMsg"></p>
+                    
+                    <p id="msg1" class="text-left"></p>
+                    <p id="msg2" class="text-left"></p>
+                    <p id="msg3" class="text-left"></p>
+                    <p id="msg4" class="text-left"></p>
+                    <p id="msg5" class="text-left"></p>
+                    <h5 id="finalMsg"></h5>
+                    
                 </div>
             </div>
 
@@ -87,45 +89,7 @@
     <script src="SCRIPTS/jquery.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="SCRIPTS/bootstrap.min.js"></script>
-
-    <script>
-        $("#submit").click(function () {
-            let word = $("#userWord").val()
-            $("#msg1").text(`You entered: ${word}`);
-
-            if (word.length < 2) {
-                alert("Please use at least 2 letters")
-            } else {
-                let cleanWord = word.toLowerCase().replace(/\s|\'|\"/g, '');
-                $("#msg2").text(`Cleaned up a bit, that's: ${cleanWord}.`);
-
-                let revWord = word.split('').reverse().join('');
-                $("#msg3").text(`Reversed, it's: ${revWord}.`);
-
-                let cleanRevWord = revWord.toLowerCase().replace(/\s|\'|\"/g, '');
-                $("#msg4").text(`Now when we clean it up, it's ${cleanRevWord}.`);
-
-                let result = "";
-
-                if (cleanWord == cleanRevWord) {
-                    result = `So, ${word} IS a palindrome!`;
-                } else {
-                    result = `So, ${word} is NOT a palindrome.`;
-                };
-
-                $("#finalMsg").text(" " + result);
-            }
-        });
-        $("#clear").click(function () {
-            $("#userWord").val("");
-            $("#msg1").text("");
-            $("#msg2").text("");
-            $("#msg3").text("");
-            $("#msg4").text("");
-            $("#finalMsg").text("");
-        });
-
-
-    </script>
+    <script src="SCRIPTS/solve.js"></script>
+    
 </body>
 </html>

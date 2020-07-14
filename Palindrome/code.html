@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Jekyll v4.0.1">
-    <title>Amore Roma | Beth Olmo</title>
+    <title>Amore Roma Code | Beth Olmo</title>
 
 
 
-    <!-- Bootstrap core CSS -->
+    <!-- CSS -->
     <link href="CSS/bootstrap.min.css" rel="stylesheet" />
     <link href="CSS/cover.css" rel="stylesheet" />
+    <link href="CSS/prism.css" rel="stylesheet" />
 
     <style>
         .bd-placeholder-img {
@@ -49,17 +48,59 @@
             </div>
         </header>
 
-        <main role="main" class="inner cover">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Enter a word or phrase" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
-                <div class="input-group-append" id="button-addon4">
-                    <button class="btn btn-success" type="button" id="palIn">Submit</button>
-                    <button class="btn btn-secondary" type="button" id="palbtnClear">Clear</button>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <h1>Amore Roma Code</h1>
+                    <p class="lead">Take a look under the hood; see how the palindrome tester works!</p>
                 </div>
             </div>
-        </main>
+            <div class="container-fluid" id="code">
+                <div class="row">
+                 
+                        <pre class="language-js line-numbers" >
+                            <code class="language-js">$("#submit").click(function () {
+                                let word = $("#userWord").val()
+                                $("#msg1").text(`You entered: ${word}`);
 
-        <script></script>
+                                if (word.length < 2) {
+                                alert("Please use at least 2 letters")
+                                } else {
+                                let cleanWord = word.toLowerCase().replace(/\s|\'|\"/g, '');
+                                $("#msg2").text(`Cleaned up a bit, that's: ${cleanWord}.`);
+
+                                let revWord = word.split('').reverse().join('');
+                                $("#msg3").text(`Reversed, it's: ${revWord}.`);
+
+                                let cleanRevWord = revWord.toLowerCase().replace(/\s|\'|\"/g, '');
+                                $("#msg4").text(`Now when we clean it up, it's ${cleanRevWord}.`);
+
+                                let result = "";
+
+                                if (cleanWord == cleanRevWord) {
+                                result = `So, ${word} IS a palindrome!`;
+                                } else {
+                                result = `So, ${word} is NOT a palindrome.`;
+                                };
+
+                                $("#finalMsg").text(" " + result);
+                                }
+                                });
+                            $("#clear").click(function () {
+                            $("#userWord").val("");
+                            $("#msg1").text("");
+                            $("#msg2").text("");
+                            $("#msg3").text("");
+                            $("#msg4").text("");
+                            $("#finalMsg").text("");
+                            });</code>
+                        </pre>
+                     
+                </div>
+             </div>
+        </div>
+
+        
 
         <footer class="mastfoot mt-auto">
             <div class="inner">
@@ -70,6 +111,7 @@
     <script src="SCRIPTS/jquery.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script src="SCRIPTS/bootstrap.min.js"></script>
+    <script src="SCRIPTS/prism.js"></script>
 
 </body>
 </html>
