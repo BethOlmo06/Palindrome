@@ -13,22 +13,7 @@
     <link href="CSS/cover.css" rel="stylesheet" />
     <link href="CSS/prism.css" rel="stylesheet" />
 
-    <style>
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-    </style>
+   
     <!-- Custom styles for this template -->
     <link href="CSS/cover.css" rel="stylesheet" />
 </head>
@@ -57,8 +42,8 @@
             </div>
             <div class="container-fluid" id="code">
                 <div class="row">
-                 
-                        <pre class="language-js line-numbers" >
+                    <div class="col-12">
+                        <pre class="line-numbers language-js" >
                             <code class="language-js">$("#submit").click(function () {
                                 let word = $("#userWord").val()
                                 $("#msg1").text(`You entered: ${word}`);
@@ -95,7 +80,7 @@
                             $("#finalMsg").text("");
                             });</code>
                         </pre>
-                     
+                     </div>
                 </div>
              </div>
         </div>
