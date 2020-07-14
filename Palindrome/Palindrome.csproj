@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="code.html" />
     <Content Include="CSS\bootstrap-grid.min.css" />
     <Content Include="CSS\bootstrap.min.css" />
     <Content Include="CSS\cover.css" />
