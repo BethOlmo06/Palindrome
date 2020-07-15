@@ -72,9 +72,7 @@
     <Content Include="CSS\bootstrap.min.css" />
     <Content Include="CSS\cover.css" />
     <Content Include="CSS\prism.css" />
-    <Content Include="IMG\StockSnap_231C6AE6F6.jpg" />
-    <Content Include="IMG\TreviFountain2.png" />
-    <Content Include="IMG\TreviFountain.png" />
+    <Content Include="IMG\coliseum150.png" />
     <Content Include="index.html" />
     <Content Include="SCRIPTS\bootstrap.min.js" />
     <Content Include="SCRIPTS\jquery.js" />
