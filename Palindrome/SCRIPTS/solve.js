@@ -25,7 +25,8 @@
                 $("#finalMsg").text(" " + result);
             }
         });
-$("#clear").click(function () {$("#userWord").val("");
+$("#clear").click(function () {
+$("#userWord").val("");
 $("#msg1").text("");
 $("#msg2").text("");
 $("#msg3").text("");
