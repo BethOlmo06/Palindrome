@@ -3,7 +3,7 @@
             $("#msg1").text(`You entered: ${word}`);
 
             if (word.length < 2) {
-        alert("Please use at least 2 letters")
+                Swal.fire('Please enter at least 2 characters.')
     } else {
         let cleanWord = word.toLowerCase().replace(/\s|\'|\"/g, '');
                 $("#msg2").text(`Cleaned up a bit, that's: ${cleanWord}.`);
