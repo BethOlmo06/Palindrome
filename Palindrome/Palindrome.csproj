@@ -74,6 +74,7 @@
     <Content Include="CSS\prism.css" />
     <Content Include="IMG\coliseum150.png" />
     <Content Include="index.html" />
+    <Content Include="SCRIPTS\bootstrap.bundle.js" />
     <Content Include="SCRIPTS\bootstrap.min.js" />
     <Content Include="SCRIPTS\jquery.js" />
     <Content Include="SCRIPTS\prism.js" />
